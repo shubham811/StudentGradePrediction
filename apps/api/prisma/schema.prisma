@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String    @id @default(uuid())
+  email    String    @unique
+  password String
+  name     String?
+  students Student[]
+}
+
+model Student {
+  id          String       @id @default(uuid())
+  name        String
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  assignments Assignment[]
+  grades      Grade[]
+  predictions Prediction[]
+}
+
+model Assignment {
+  id          String   @id @default(uuid())
+  studentId   String
+  student     Student  @relation(fields: [studentId], references: [id])
+  fileUrl     String
+  submittedAt DateTime @default(now())
+}
+
+model Grade {
+  id        String   @id @default(uuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id])
+  value     Float
+  date      DateTime @default(now())
+}
+
+model Prediction {
+  id             String   @id @default(uuid())
+  studentId      String
+  student        Student  @relation(fields: [studentId], references: [id])
+  predictedGrade Float
+  feedback       String
+  createdAt      DateTime @default(now())
+}
