@@ -15,12 +15,37 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
+"@apollo/cache-control-types@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@apollo/cache-control-types/-/cache-control-types-1.0.3.tgz#5da62cf64c3b4419dabfef4536b57a40c8ff0b47"
+  integrity sha512-F17/vCp7QVwom9eG7ToauIKdAxpSoadsJnqIfyryLFSkLSOEqu+eC5Z3N8OXcUVStuOMcNHlyraRsA6rRICu4g==
+
+"@apollo/federation-internals@2.11.2":
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/@apollo/federation-internals/-/federation-internals-2.11.2.tgz#ab0df7d427935c6e3323c0083f866d659f206b5f"
+  integrity sha512-GSFGL2fLox3EBszWKJvRkVLFA0hkJF9PHGMQH+WdB/12KVB3QHKwDyW1T9VZtxe2SJhNU3puleSxCsO16Bf3iA==
+  dependencies:
+    "@types/uuid" "^9.0.0"
+    chalk "^4.1.0"
+    js-levenshtein "^1.1.6"
+    uuid "^9.0.0"
+
 "@apollo/federation@0.27.0":
   version "0.27.0"
   resolved "https://registry.npmjs.org/@apollo/federation/-/federation-0.27.0.tgz"
   integrity sha512-hMeRN9IPsIn+5J5SmWof0ODbvRjRj8mBNqbsm9Zjkqjbw6RTlcx90taMk7cYhcd/E+uTyLQt5cOSRVBx53cxbQ==
   dependencies:
     apollo-graphql "^0.9.3"
+    lodash.xorby "^4.7.0"
+
+"@apollo/federation@^2.0.0-alpha.1":
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-2.0.0-alpha.1.tgz#28a320fa3261b2e7c5297a913afecb848467cfd1"
+  integrity sha512-lM3+YnGD3oxTwDKXK3QL6TQkH5aDrJSKn2f/fUZ6e/xJo5TCBuEaUU/XiQMA5N6HMqGS0VL2zNkHMDDmdJl5kw==
+  dependencies:
+    "@apollo/subgraph" "^2.0.0-alpha.1"
+    apollo-graphql "^0.9.3"
+    apollo-server-types "^3.0.2"
     lodash.xorby "^4.7.0"
 
 "@apollo/protobufjs@1.2.6":
@@ -59,6 +84,14 @@
     "@protobufjs/utf8" "^1.1.0"
     "@types/long" "^4.0.0"
     long "^4.0.0"
+
+"@apollo/subgraph@^2.0.0-alpha.1":
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/@apollo/subgraph/-/subgraph-2.11.2.tgz#4d56b07999b69ce7a14f13fa1b1c17f932a037d2"
+  integrity sha512-S14osF5Zc8pd6lzeNtX1QHboMcQK5PXcN9EumZyRYBF0TRbnEFLF8Me9zMcfR3QP7GCiggjd6PA2IAaPC9uCSQ==
+  dependencies:
+    "@apollo/cache-control-types" "^1.0.2"
+    "@apollo/federation-internals" "2.11.2"
 
 "@apollo/usage-reporting-protobuf@^4.0.0":
   version "4.1.1"
@@ -1243,6 +1276,11 @@
     "@types/node" "*"
     "@types/send" "*"
 
+"@types/uuid@^9.0.0":
+  version "9.0.8"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.8.tgz#7545ba4fc3c003d6c756f651f3bf163d8f0f29ba"
+  integrity sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==
+
 "@wry/equality@^0.1.2":
   version "0.1.11"
   resolved "https://registry.npmjs.org/@wry/equality/-/equality-0.1.11.tgz"
@@ -1597,7 +1635,7 @@ apollo-server-plugin-base@^3.7.2:
   dependencies:
     apollo-server-types "^3.8.0"
 
-apollo-server-types@^3.8.0:
+apollo-server-types@^3.0.2, apollo-server-types@^3.8.0:
   version "3.8.0"
   resolved "https://registry.npmjs.org/apollo-server-types/-/apollo-server-types-3.8.0.tgz"
   integrity sha512-ZI/8rTE4ww8BHktsVpb91Sdq7Cb71rdSkXELSwdSR0eXu600/sY+1UXhTWdiJvk+Eq5ljqoHLwLbY2+Clq2b9A==
@@ -3595,6 +3633,11 @@ jiti@^1.21.6:
   version "1.21.7"
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz"
   integrity sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==
+
+js-levenshtein@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
+  integrity sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==
 
 js-sha3@0.8.0:
   version "0.8.0"
